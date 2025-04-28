@@ -1,0 +1,95 @@
+\documentclass[tikz]{standalone}
+
+\usepackage{pgfgantt}
+\usepackage[colorlinks=true, urlcolor=blue, linkcolor=red]{hyperref}
+
+\tikzset{
+  href/.style={
+    alias=sourcenode,
+    append after command={
+    	let	\p1 = (sourcenode.north west),
+    		\p2 = (sourcenode.south east),
+    		\n1 = {\x2-\x1},
+    		\n2 = {\y1-\y2} in
+    	node [inner sep=0pt, outer sep=0pt,anchor=north west,at=(\p1)] {\href{#1}{\XeTeXLinkBox{\phantom{\rule{\n1}{\n2}}}}}
+    },
+  },
+}
+
+\begin{document}
+
+\begin{ganttchart}[vgrid={draw=none, dotted}, bar/.append style={fill=black}, bar label node/.append style={anchor=west, xshift=-2cm}, bar height = 0.2]{1923}{2024}
+\gantttitle[title label font=\LARGE\color{black}]{1900s}{77}  \gantttitle[title label font=\LARGE\color{black}]{2000s}{25}  \\
+\ganttbar[bar/.append style={fill=white}, bar top shift=-0.4, bar height=0.6]{}{1923}{2024} \\
+\gantttitlelist[title top shift = -1.4]{23,...,99}{1}  \gantttitlelist[title top shift = -1.4]{0,...,24}{1} \\
+\ganttset{title top shift=-1.2}
+\ganttset{bar top shift=-1.0}
+
+\gantttitle[title left shift=-4, title label node/.append style={anchor=west, xshift=-26.5cm}]{\textbf{Biological}}{102} \\%
+\ganttbar{whitefish}{2000}{2001} \ganttbar{}{1959}{1959} \ganttbar{}{1975}{1989} \ganttbar{}{2005}{2007} \\
+\ganttbar{cutthroat}{1975}{1989} \ganttbar{}{1959}{1959} \ganttbar{}{2000}{2007} \\
+\ganttbar{lake trout}{1975}{1989} \ganttbar{}{1959}{1959} \ganttbar{}{2000}{2007} \\
+\ganttbar{rainbow}{1975}{1979} \ganttbar{}{1959}{1959} \ganttbar{}{1981}{1982} \ganttbar{}{1984}{1989} \\
+\ganttbar{b. cisco}{1975}{1989} \ganttbar{}{1959}{1959} \ganttbar{}{2000}{2007} \\
+\ganttbar{UT sucker}{1975}{1989} \ganttbar{}{1959}{1959} \\
+\ganttbar{UT chub}{1975}{1989} \ganttbar{}{1959}{1959} \\
+\ganttbar{carp}{1975}{1979} \ganttbar{}{1959}{1959} \ganttbar{}{1981}{1982} \ganttbar{}{1984}{1989} \\
+\ganttbar{y. perch}{1975}{1977} \ganttbar{}{1959}{1959} \ganttbar{}{1984}{1987} \\
+\ganttbar{r. shiner}{1975}{1977} \ganttbar{}{1959}{1959} \ganttbar{}{1987}{1987} \\
+\ganttbar{sculpin}{1976}{1977} \ganttbar{}{1959}{1959} \ganttbar{}{1984}{1985} \ganttbar{}{1987}{1989} \\
+\ganttbar{spec. dace}{1959}{1959} \\
+\ganttbar{plankton}{1985}{1987} \ganttbar{}{1965}{1965} \ganttbar{}{1981}{1983} \\
+
+\gantttitle[title left shift=-4, title label node/.append style={anchor=west, xshift=-26.5cm}]{\textbf{Chemical}}{102} \\
+\ganttbar{phosphorus}{1971}{1972} \ganttbar{}{1923}{1923} \ganttbar{}{1956}{1956} \ganttbar{}{1965}{1966} \ganttbar{}{1968}{1969} \ganttbar{}{1974}{2007} \\
+\ganttbar{nitrogen}{1978}{2007} \ganttbar{}{1923}{1923} \ganttbar{}{1956}{1956} \ganttbar{}{1964}{1966} \ganttbar{}{1968}{1969} \ganttbar{}{1974}{1976} \ganttbar{}{1971}{1972} \\
+\ganttbar{carbon}{1981}{1983} \ganttbar{}{1923}{1923} \ganttbar{}{1952}{1953} \ganttbar{}{1956}{1956} \ganttbar{}{1964}{1965} \ganttbar{}{1971}{1972}\\
+\ganttbar{magnesium}{1923}{1923} \ganttbar{}{1952}{1953} \ganttbar{}{1958}{1960} \ganttbar{}{1964}{1966} \ganttbar{}{1968}{1970} \ganttbar{}{1971}{1972} \\
+\ganttbar{calcium}{1923}{1923} \ganttbar{}{1964}{1966} \ganttbar{}{1968}{1970} \ganttbar{}{1975}{1976} \ganttbar{}{1971}{1972} \ganttbar{}{1952}{1953} \ganttbar{}{1958}{1960} \ganttbar{}{1981}{1983} \ganttbar{}{1996}{2000} \ganttbar{}{2004}{2007} \\
+\ganttbar{zinc}{1923}{1923} \ganttbar{}{1941}{1941} \ganttbar{}{1943}{1943} \ganttbar{}{1956}{1956} \\
+\ganttbar{sodium}{1923}{1923} \ganttbar{}{1952}{1953} \ganttbar{}{1958}{1960} \ganttbar{}{1964}{1965} \ganttbar{}{1968}{1970} \\
+\ganttbar{sulfur}{1923}{1923} \ganttbar{}{1952}{1953} \ganttbar{}{1964}{1965} \\
+\ganttbar{potassium}{1923}{1923} \ganttbar{}{1952}{1953} \ganttbar{}{1956}{1956} \ganttbar{}{1964}{1965} \ganttbar{}{1968}{1970} \\
+\ganttbar{chlorine}{1923}{1923} \ganttbar{}{1952}{1953} \ganttbar{}{1958}{1960} \ganttbar{}{1964}{1965} \ganttbar{}{1968}{1969} \ganttbar{}{1971}{1972} \\
+\ganttbar{pH}{1971}{1972} \ganttbar{}{1934}{1935} \ganttbar{}{1939}{1942} \ganttbar{}{1961}{1963} \ganttbar{}{1964}{1965} \ganttbar{}{1975}{1975} \ganttbar{}{1980}{1987} \ganttbar{}{1987}{2007} \ganttbar{}{2021}{2024} \\
+\ganttbar{oxygen}{1975}{1975} \ganttbar{}{1977}{1977} \ganttbar{}{1980}{2007} \ganttbar{}{2021}{2024} \\
+\ganttbar{chl-a}{1975}{1975} \ganttbar{}{1980}{2007} \ganttbar{}{2021}{2024} \\
+\ganttbar{iron}{1964}{1965} \\
+\ganttbar{lead}{1998}{1998} \\
+\ganttbar{fluorine}{1964}{1965} \\
+\ganttbar{sediment}{1981}{1983} \ganttbar{}{1964}{1965} \ganttbar{}{1972}{1973} \ganttbar{}{1975}{1976} \ganttbar{}{1993}{2007} \\
+\ganttbar{conductivity}{1965}{1966} \ganttbar{}{1975}{1977} \ganttbar{}{1980}{1986} \ganttbar{}{1995}{2007} \\
+
+\gantttitle[title left shift=-4, title label node/.append style={anchor=west, xshift=-26.5cm}]{\textbf{Physical}}{102} \\
+\ganttbar{ice cover}{1923}{1933} \ganttbar{}{1935}{1937} \ganttbar{}{1935}{1937} 
+\ganttbar{}{1939}{1939} \ganttbar{}{1941}{1944} \ganttbar{}{1946}{1950} 
+\ganttbar{}{1952}{1952} \ganttbar{}{1955}{1958} \ganttbar{}{1960}{1960}
+\ganttbar{}{1962}{1962} \ganttbar{}{1964}{1966} \ganttbar{}{1968}{1969}
+\ganttbar{}{1971}{1976} \ganttbar{}{1979}{1980} \ganttbar{}{1982}{1986}
+\ganttbar{}{1988}{1989} \ganttbar{}{1991}{1994} \ganttbar{}{1997}{1997}
+\ganttbar{}{2001}{2002} \ganttbar{}{2004}{2004} \ganttbar{}{2006}{2008}
+\ganttbar{}{2011}{2011} \ganttbar{}{2013}{2014} \ganttbar{}{2016}{2016}
+\ganttbar{}{2022}{2023}
+\\
+\ganttbar{water temp.}{1975}{2002} \ganttbar{}{1958}{1960} \ganttbar{}{2018}{2018} \ganttbar{}{2021}{2024} \\
+\ganttbar[bar/.append style = {fill=blue, href=https://www.hydroshare.org/resource/444e4bd2940e47e6bcab5e7966a929fe/data/contents/workshop/download_testing/Color_FUI_monthly_2000-18.zip}]{\href{https://www.hydroshare.org/resource/444e4bd2940e47e6bcab5e7966a929fe/data/contents/workshop/download_testing/Color_FUI_monthly_2000-18.zip}{water color}}{2000}{2018} 
+\ganttbar[bar/.append style = {fill=blue, href=https://www.hydroshare.org/resource/444e4bd2940e47e6bcab5e7966a929fe/data/contents/workshop/download_testing/Cond_pH_tub_Color_Ca_Cl_N_P_O_C_1964-65.zip}]{}{1964}{1964} \\
+\ganttbar{secchi depth}{1986}{1987} \ganttbar{}{1975}{2007} \\
+\ganttbar{turbidity}{1964}{1964} \ganttbar{}{1993}{2007} \ganttbar{}{2021}{2024} \\
+\ganttbar{res. storage}{1982}{2007} \\
+\ganttbar{elevation}{1975}{2011} \\
+\ganttbar{trib. flows}{1923}{1925} \ganttbar{}{1927}{1974} \\
+\ganttbar{inlet}{1923}{2008} \\
+\ganttbar{outlet}{1923}{2008} \\
+\ganttbar{lifton}{1997}{2008} \\
+\ganttbar{causeway}{1997}{2008} \\
+\ganttbar{precip}{2000}{2000} \\
+\ganttbar{air temp.}{2021}{2024} \\
+\ganttbar{rel. hum.}{2021}{2024} \\
+\ganttbar{sol. rad.}{2021}{2024} \\
+\ganttbar{wind}{2021}{2024} \\
+\ganttbar{spec. cond.}{2021}{2024} \\
+
+\end{ganttchart}
+
+\end{document}
